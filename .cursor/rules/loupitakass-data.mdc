@@ -1,0 +1,14 @@
+---
+description: Pattern DB, auth e Server Actions
+globs: src/lib/**/*.{ts,tsx},src/app/admin/**/*.{ts,tsx},src/app/api/**/*.{ts,tsx}
+alwaysApply: false
+---
+
+# Data & admin
+
+- ORM: Drizzle su Postgres (`DATABASE_URL` / `POSTGRES_URL`)
+- Schema tipico: `events` (incl. campi i18n + URL volantino Blob), `members`, opz. `users` admin
+- Auth: cookie httpOnly firmato (`AUTH_SECRET`) + `ADMIN_EMAIL` / `ADMIN_PASSWORD_HASH` (o tabella users 1–2 record)
+- Upload media: `@vercel/blob` (`BLOB_READ_WRITE_TOKEN`) — volantini eventi e simili
+- Form contatti: Resend + honeypot + rate limit base
+- Mai loggare secret, hash password o connection string

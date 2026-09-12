@@ -1,0 +1,24 @@
+{
+  "Meta": {
+    "siteName": "Lou Pitakass",
+    "description": "Sito ufficiale di Lou Pitakass. Bio, date, musica e contatti."
+  },
+  "Home": {
+    "eyebrow": "Scaffold · i18n",
+    "title": "Lou Pitakass",
+    "lead": "Next.js, Tailwind e shadcn sono pronti. Lingue: IT, FR, EN, OC.",
+    "ctaStack": "Vai allo stack",
+    "decisionsTitle": "Deciso",
+    "decisionAuth": "Auth admin: sessione leggera + email/password (no Auth.js)",
+    "decisionMedia": "Media: Vercel Blob per upload volantini eventi + asset in /public",
+    "decisionDomain": "Dominio: loupitakass.com",
+    "decisionLocales": "Lingue: Italiano, Français, English, Occitan"
+  },
+  "LocaleSwitcher": {
+    "label": "Lingua",
+    "it": "IT",
+    "fr": "FR",
+    "en": "EN",
+    "oc": "OC"
+  }
+}

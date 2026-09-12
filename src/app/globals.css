@@ -1,26 +1,144 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-display: var(--font-display);
+  --font-heading: var(--font-display);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-brand-ink: var(--brand-ink);
+  --color-brand-brass: var(--brand-brass);
+  --color-brand-pine: var(--brand-pine);
+  --color-brand-mist: var(--brand-mist);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/*
+  Lou Pitakass brand tokens (bozza — raffinare con logo/foto reali)
+  Direzione: notte da palco + ottone + pino (folk occitano, no purple / no cream terracotta)
+*/
+:root {
+  --brand-ink: oklch(0.22 0.025 240);
+  --brand-brass: oklch(0.76 0.11 80);
+  --brand-pine: oklch(0.38 0.06 155);
+  --brand-mist: oklch(0.96 0.008 230);
+
+  --background: var(--brand-mist);
+  --foreground: var(--brand-ink);
+  --card: oklch(0.99 0.004 230);
+  --card-foreground: var(--brand-ink);
+  --popover: oklch(0.99 0.004 230);
+  --popover-foreground: var(--brand-ink);
+  --primary: var(--brand-pine);
+  --primary-foreground: oklch(0.98 0.01 100);
+  --secondary: oklch(0.93 0.015 230);
+  --secondary-foreground: var(--brand-ink);
+  --muted: oklch(0.93 0.012 230);
+  --muted-foreground: oklch(0.48 0.02 240);
+  --accent: var(--brand-brass);
+  --accent-foreground: var(--brand-ink);
+  --destructive: oklch(0.55 0.2 25);
+  --border: oklch(0.86 0.015 230);
+  --input: oklch(0.86 0.015 230);
+  --ring: var(--brand-pine);
+  --chart-1: var(--brand-pine);
+  --chart-2: var(--brand-brass);
+  --chart-3: oklch(0.55 0.08 200);
+  --chart-4: oklch(0.45 0.05 155);
+  --chart-5: oklch(0.35 0.03 240);
+  --radius: 0.5rem;
+  --sidebar: oklch(0.98 0.006 230);
+  --sidebar-foreground: var(--brand-ink);
+  --sidebar-primary: var(--brand-pine);
+  --sidebar-primary-foreground: oklch(0.98 0.01 100);
+  --sidebar-accent: oklch(0.93 0.015 230);
+  --sidebar-accent-foreground: var(--brand-ink);
+  --sidebar-border: oklch(0.86 0.015 230);
+  --sidebar-ring: var(--brand-pine);
+}
+
+.dark {
+  --background: var(--brand-ink);
+  --foreground: var(--brand-mist);
+  --card: oklch(0.28 0.025 240);
+  --card-foreground: var(--brand-mist);
+  --popover: oklch(0.28 0.025 240);
+  --popover-foreground: var(--brand-mist);
+  --primary: var(--brand-brass);
+  --primary-foreground: var(--brand-ink);
+  --secondary: oklch(0.32 0.02 240);
+  --secondary-foreground: var(--brand-mist);
+  --muted: oklch(0.32 0.02 240);
+  --muted-foreground: oklch(0.75 0.02 230);
+  --accent: var(--brand-pine);
+  --accent-foreground: var(--brand-mist);
+  --destructive: oklch(0.65 0.18 25);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 14%);
+  --ring: var(--brand-brass);
+  --chart-1: var(--brand-brass);
+  --chart-2: var(--brand-pine);
+  --chart-3: oklch(0.7 0.08 200);
+  --chart-4: oklch(0.65 0.05 155);
+  --chart-5: oklch(0.8 0.03 230);
+  --sidebar: oklch(0.25 0.025 240);
+  --sidebar-foreground: var(--brand-mist);
+  --sidebar-primary: var(--brand-brass);
+  --sidebar-primary-foreground: var(--brand-ink);
+  --sidebar-accent: oklch(0.32 0.02 240);
+  --sidebar-accent-foreground: var(--brand-mist);
+  --sidebar-border: oklch(1 0 0 / 12%);
+  --sidebar-ring: var(--brand-brass);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans scroll-smooth;
+  }
 }

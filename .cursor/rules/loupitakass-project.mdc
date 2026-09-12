@@ -1,0 +1,32 @@
+---
+description: Contesto progetto Lou Pitakass — stack, scope e decisioni
+alwaysApply: true
+---
+
+# Lou Pitakass
+
+Sito one-page della band + admin eventi. Dominio: `loupitakass.com`.
+
+## Scope sprint
+- Vetrina: hero, bio, membri, date+mappa, ascoltaci, seguici, contatti, footer
+- Admin CRUD eventi (campi multilingua), form mail Resend
+- i18n: **IT (default) / FR / EN / OC (occitano)** — copy OC spesso fornito dal cliente
+- **No shop**
+
+## Stack
+- Next.js App Router + TypeScript + Tailwind + shadcn/ui
+- next-intl, Drizzle + Vercel Postgres, Zod, react-hook-form
+- Auth admin: **sessione leggera** (cookie firmato + bcrypt), email/password — **non Auth.js**
+- MapLibre + OSM + Nominatim, lucide-react, Resend
+- Media: asset statici in `public/` + **Vercel Blob** per upload admin (es. volantini eventi)
+
+## Struttura
+- Pubblico: `src/app/[locale]/` + `src/components/sections/`
+- Admin: `src/app/admin/` (fuori dal routing locale, o locale-agnostic)
+- DB: `src/lib/db/`, auth: `src/lib/auth/`, messaggi: `src/messages/{it,fr,en,oc}.json`
+
+## Convenzioni
+- Preferisci Server Components; Client solo per interattività
+- Validazione Zod su input; mutazioni via Server Actions
+- Non inventare contenuti brand: usa asset da Drive / copy forniti
+- Risposte e copy UI di default in italiano
