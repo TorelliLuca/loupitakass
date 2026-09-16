@@ -6,9 +6,10 @@ alwaysApply: false
 
 # Data & admin
 
-- ORM: Drizzle su Postgres (`DATABASE_URL` / `POSTGRES_URL`)
-- Schema tipico: `events` (incl. campi i18n + URL volantino Blob), `members`, opz. `users` admin
-- Auth: cookie httpOnly firmato (`AUTH_SECRET`) + `ADMIN_EMAIL` / `ADMIN_PASSWORD_HASH` (o tabella users 1–2 record)
-- Upload media: `@vercel/blob` (`BLOB_READ_WRITE_TOKEN`) — volantini eventi e simili
+- ORM: Drizzle su Postgres (`DATABASE_URL` / `POSTGRES_URL`) — 4 tabelle (`users`, `members`, `events`, `albums`), volume tipico ≪ free tier
+- Schema tipico: `events` (i18n + `flyerUrl` Blob), `albums` (i18n + `releaseType` album|single + `coverUrl`/`coverBackUrl`/`discUrl` Blob + link piattaforme), `members`, `users` admin
+- Auth: cookie httpOnly firmato (`AUTH_SECRET`) + user in tabella `users` (o env bootstrap)
+- Upload media: `@vercel/blob` (`BLOB_READ_WRITE_TOKEN`) — volantini eventi, cover/disco album e simili
 - Form contatti: Resend + honeypot + rate limit base
 - Mai loggare secret, hash password o connection string
+- Comandi: `npm run db:generate` · `db:push` · `db:migrate` · `db:seed` · `db:studio`

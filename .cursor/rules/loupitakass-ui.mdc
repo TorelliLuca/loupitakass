@@ -7,9 +7,10 @@ alwaysApply: false
 # UI Lou Pitakass
 
 - Token in `globals.css`: `--brand-ink`, `--brand-brass`, `--brand-pine`, `--brand-mist`
-- Font: `font-display` (Bricolage Grotesque) per brand/titoli; `font-sans` (Source Sans 3) per body
-- One-page: sezioni ad ancora (`#bio`, `#membri`, `#date`, …), hero full-bleed
+- Font: `font-display` (Bodoni Moda) per brand/titoli enormi; `font-sans` (Source Sans 3) per body
+- Direzione: editoriale festival (hero foto full-bleed, serif gigante, CTA pill sabbia, sezioni bianche nette) — ispirazione Guinness Irish Festival, non copia 1:1
+- One-page: sezioni ad ancora (`#bio`, `#membri`, `#date`, …), header sticky con link in top bar
 - i18n UI: switcher IT/FR/EN/OC; testi in `src/messages/{it,fr,en,oc}.json` (OC spesso dal cliente)
 - shadcn per controlli interattivi; evita card decorative senza interazione
-- Mappa: MapLibre, non Google Maps
+- Mappa: MapLibre in contenitore `relative isolate overflow-hidden` (canvas absolute non deve coprire la hero); non Google Maps
 - Non introdurre temi purple-default o cream+terracotta generici

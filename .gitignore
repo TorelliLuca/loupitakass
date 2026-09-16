@@ -40,3 +40,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+.vercel
+.env*
+
+# Originali foto (non serviti dal sito)
+/public/images/source/
+/public/images/members/_alternates/
