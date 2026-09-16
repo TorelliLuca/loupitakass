@@ -14,7 +14,6 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Section, SectionHeading } from "@/components/sections/section";
 import { Link } from "@/i18n/navigation";
-import { site } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 const initialState: ContactState = {};
@@ -91,7 +90,6 @@ export function ContactFormSection() {
             size="sm"
             placement="below"
             className="occitan-section-emblem--form-back"
-            src={site.images.occitanCross}
           />
           <form
             ref={formRef}

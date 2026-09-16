@@ -9,12 +9,12 @@ ROOT = Path(__file__).resolve().parents[1]
 CROSS = ROOT / "public/images/brand/occitan-cross.svg"
 OUT = ROOT / "public/images/brand/occitan-emblem.svg"
 
-# Croce in viewBox 800×800; stella piccola, quasi attaccata al cantone NE
+# Croce in viewBox 800×800; stella nel cantone NE (3× rispetto a prima)
 CROSS_SIZE = 800
-STAR_SIZE = CROSS_SIZE / 22  # ~36px, più piccola
-# Nestled tra i bracci N/E della croce
-STAR_X = 612
-STAR_Y = 98
+STAR_SIZE = (CROSS_SIZE / 22) * 3  # ~109px
+# Centro ottico vicino ai bracci N/E (stesso punto di prima, scala 3×)
+STAR_X = 575
+STAR_Y = 62
 
 
 def star_path(size: float = 100) -> str:
