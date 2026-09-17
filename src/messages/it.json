@@ -1,11 +1,11 @@
 {
   "Meta": {
     "siteName": "Lou Pitakass",
-    "description": "Sito ufficiale di Lou Pitakass. Bio, date, musica e contatti."
+    "description": "Sito ufficiale di Lou Pitakass. Bio, concerti, musica e contatti."
   },
   "Nav": {
     "home": "Home",
-    "dates": "Date",
+    "dates": "Concerti",
     "map": "Mappa",
     "listen": "Ascoltaci",
     "follow": "Seguici",
@@ -16,17 +16,17 @@
     "close": "Chiudi"
   },
   "Hero": {
-    "ctaDates": "Prossime date",
+    "ctaDates": "Prossimi concerti",
     "ctaListen": "Ascoltaci",
     "scroll": "Scorri"
   },
   "Dates": {
-    "title": "Date",
-    "lead": "Concerti in arrivo e memoria di quelli già suonati.",
-    "upcoming": "Prossime",
-    "past": "Passate",
-    "emptyUpcoming": "Nessuna data in programma per ora.",
-    "emptyPast": "Nessuna data passata da mostrare.",
+    "title": "Concerti",
+    "lead": "I concerti che ci aspettano e quelli già passati.",
+    "upcoming": "Prossimi",
+    "past": "Passati",
+    "emptyUpcoming": "Nessun concerto in programma per ora.",
+    "emptyPast": "Nessun concerto passato da mostrare.",
     "tickets": "Biglietti",
     "flyer": "Volantino",
     "time": "ore",
@@ -34,14 +34,14 @@
     "comeSee": "Vieni a vederci",
     "venue": "Luogo",
     "showAll": "Mostra tutto",
-    "pastAll": "Tutte le date passate"
+    "pastAll": "Tutti i concerti passati"
   },
   "Map": {
     "title": "Mappa",
-    "lead": "Dove abbiamo suonato e dove andremo.",
-    "filterAll": "Tutte",
-    "filterUpcoming": "Future",
-    "filterPast": "Passate",
+    "lead": "I luoghi della nostra musica.",
+    "filterAll": "Tutti",
+    "filterUpcoming": "Futuri",
+    "filterPast": "Passati",
     "empty": "Nessun punto da mostrare per questo filtro.",
     "clusterLabel": "{count} date · {place}",
     "clusterCount": "{count} date in questo luogo",
@@ -49,7 +49,7 @@
   },
   "Listen": {
     "title": "Ascoltaci su",
-    "lead": "Video e ascolto in streaming.",
+    "lead": "La nostra musica, online.",
     "discography": "Discografia",
     "discographyLead": "Album e singoli della band.",
     "comingSoon": "Prossimamente",
@@ -73,16 +73,22 @@
     "youtubePlaceholder": "Il video ufficiale arriverà a breve.",
     "spotifyPlaceholder": "Il link all’album Spotify arriverà a breve.",
     "openYoutube": "Apri su YouTube",
-    "openSpotify": "Apri su Spotify"
+    "openSpotify": "Apri su Spotify",
+    "loadYoutube": "Carica player YouTube",
+    "loadSpotify": "Carica player Spotify"
   },
   "Follow": {
     "title": "Seguici su",
-    "lead": "Novità, prove e date sui social.",
+    "lead": "Per restare aggiornati su novità e concerti.",
     "facebook": "Facebook",
     "instagram": "Instagram",
     "openFacebook": "Vai alla pagina Facebook",
     "openInstagram": "Vai al profilo Instagram",
     "feedHint": "Ultimo post — clicca per leggere e aprire sul social.",
+    "instagramFeedHint": "Ultimi post — scorri la galleria e clicca per leggere o aprire su Instagram.",
+    "instagramGallery": "Galleria Instagram",
+    "galleryPrev": "Post precedente",
+    "galleryNext": "Post successivo",
     "feedUnavailable": "Feed non disponibile al momento. Apri il profilo dal link sotto.",
     "openPost": "Apri il post",
     "openOnFacebook": "Apri su Facebook",
@@ -141,7 +147,7 @@
     "flipShow": "Mostra strumento e bio di {name}",
     "flipBack": "Nascondi dettaglio di {name}",
     "flipHint": "Tocca una foto per girarla.",
-    "bioFallback": "Bio in arrivo.",
+    "bioFallback": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae nisl at arcu tincidunt porttitor. Sed auctor, nisl nec fermentum feugiat, erat nisl tincidunt justo, vitae luctus magna lorem non nisl. Integer at libero non eros convallis tincidunt. Praesent vel nunc eget purus pretium egestas et eget elit.",
     "viewGallery": "Guarda la gallery"
   },
   "ContactForm": {
@@ -193,7 +199,8 @@
     "rights": "Tutti i diritti riservati.",
     "admin": "Area admin",
     "privacy": "Privacy",
-    "story": "La nostra storia"
+    "story": "La nostra storia",
+    "designedBy": "Designed by"
   },
   "Links": {
     "metaTitle": "Link",

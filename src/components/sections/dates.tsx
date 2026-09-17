@@ -2,6 +2,7 @@ import { getLocale, getTranslations } from "next-intl/server";
 import type { Event } from "@/lib/db/schema";
 import type { AppLocale } from "@/i18n/routing";
 import { splitEvents } from "@/lib/public-data";
+import { OccitanCrossMark } from "@/components/brand/occitan-watermark";
 import { FadeIn } from "@/components/motion/fade-in";
 import {
   EventList,
@@ -25,11 +26,12 @@ export async function DatesSection({ events }: { events: Event[] }) {
   };
 
   return (
-    <Section id="date" wide crossSize="sm">
+    <Section id="date" wide cross={false}>
       <SectionHeading title={t("title")} lead={t("lead")} align="right" />
       <div className="grid gap-16 lg:grid-cols-2 lg:items-start">
-        <div className="space-y-16">
-          <div>
+        <div className="relative space-y-16">
+          <OccitanCrossMark size="sm" placement="backdrop" />
+          <div className="relative z-10">
             <FadeIn>
               <h3 className="mb-2 text-xs font-semibold tracking-[0.28em] text-brand-ink/50 uppercase">
                 {t("upcoming")}
@@ -42,7 +44,7 @@ export async function DatesSection({ events }: { events: Event[] }) {
               {...listLabels}
             />
           </div>
-          <div>
+          <div className="relative z-10">
             <FadeIn>
               <h3 className="mb-2 text-xs font-semibold tracking-[0.28em] text-brand-ink/40 uppercase">
                 {t("past")}

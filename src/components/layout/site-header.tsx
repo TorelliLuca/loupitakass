@@ -61,13 +61,11 @@ export function SiteHeader() {
     ? "text-brand-ink/70 hover:bg-brand-ink/5 hover:text-brand-ink"
     : "text-white/80 hover:bg-white/10 hover:text-white";
 
-  const localeTone = solid
-    ? "[&_button]:text-brand-ink/60 [&_button[aria-current=true]]:bg-brand-ink [&_button[aria-current=true]]:text-white"
-    : "[&_button]:text-white/75 [&_button[aria-current=true]]:bg-brand-brass [&_button[aria-current=true]]:text-brand-ink";
-
   const iconButtonTone = solid
     ? "text-brand-ink hover:bg-brand-ink/5"
     : "text-white hover:bg-white/10";
+
+  const localeTone = open || !solid ? "onDark" : "ink";
 
   return (
     <header
@@ -108,25 +106,27 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <LocaleSwitcher className={cn("hidden lg:flex", localeTone)} />
+        <div className="flex items-center gap-1">
+          <LocaleSwitcher tone={localeTone} />
 
-        <button
-          type="button"
-          className={cn(
-            "inline-flex size-10 items-center justify-center rounded-full transition-colors lg:hidden",
-            open ? "text-white hover:bg-white/10" : iconButtonTone,
-          )}
-          aria-expanded={open}
-          aria-controls={menuId}
-          aria-label={open ? t("close") : t("menu")}
-          onClick={() => setOpen((value) => !value)}
-        >
-          {open ? (
-            <X className="size-5" strokeWidth={2} aria-hidden />
-          ) : (
-            <Menu className="size-5" strokeWidth={2} aria-hidden />
-          )}
-        </button>
+          <button
+            type="button"
+            className={cn(
+              "inline-flex size-10 items-center justify-center rounded-full transition-colors lg:hidden",
+              open ? "text-white hover:bg-white/10" : iconButtonTone,
+            )}
+            aria-expanded={open}
+            aria-controls={menuId}
+            aria-label={open ? t("close") : t("menu")}
+            onClick={() => setOpen((value) => !value)}
+          >
+            {open ? (
+              <X className="size-5" strokeWidth={2} aria-hidden />
+            ) : (
+              <Menu className="size-5" strokeWidth={2} aria-hidden />
+            )}
+          </button>
+        </div>
       </div>
 
       <div
@@ -159,10 +159,6 @@ export function SiteHeader() {
               </a>
             ))}
           </nav>
-
-          <div className="mt-auto border-t border-white/10 pt-5">
-            <LocaleSwitcher className="justify-center [&_button]:px-3 [&_button]:py-1.5 [&_button]:text-sm [&_button]:text-white/70 [&_button:hover]:bg-white/10 [&_button:hover]:text-white [&_button[aria-current=true]]:bg-brand-brass [&_button[aria-current=true]]:text-brand-ink" />
-          </div>
         </div>
       </div>
     </header>

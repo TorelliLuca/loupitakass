@@ -1,23 +1,39 @@
 import { getTranslations } from "next-intl/server";
 import type { Album } from "@/lib/db/schema";
 import { site, youtubeEmbedSrc } from "@/lib/site";
+import { OccitanCrossMark } from "@/components/brand/occitan-watermark";
 import { FadeIn } from "@/components/motion/fade-in";
 import { SocialLogoLink } from "@/components/brand/social-icon";
 import { AlbumDiscography } from "@/components/sections/album-discography";
+import { EmbedFacade } from "@/components/sections/embed-facade";
 import { Section, SectionHeading } from "@/components/sections/section";
 
 export async function ListenSection({ albums }: { albums: Album[] }) {
   const t = await getTranslations("Listen");
   const youtubeSrc = youtubeEmbedSrc();
   const hasSpotify = Boolean(site.spotifyEmbedUri);
+  const posterSrc = site.images.storyHero;
 
   return (
-    <Section id="ascoltaci" wide crossSize="sm" className="overflow-visible">
+    <Section id="ascoltaci" wide cross={false} className="overflow-visible">
       <SectionHeading title={t("title")} lead={t("lead")} />
 
-      <AlbumDiscography albums={albums} />
+      <div className="relative z-10">
+        <AlbumDiscography albums={albums} />
+      </div>
 
-      <div className="grid gap-14 lg:grid-cols-2">
+      <div
+        className="pointer-events-none relative z-0 -my-24 h-0 sm:-my-28"
+        aria-hidden
+      >
+        <OccitanCrossMark
+          size="sm"
+          placement="below"
+          className="occitan-section-emblem--listen-mid"
+        />
+      </div>
+
+      <div className="relative z-10 grid gap-14 lg:grid-cols-2">
         <FadeIn>
           <h3 className="mb-4 flex items-center gap-3 font-display text-3xl text-brand-ink">
             <SocialLogoLink
@@ -28,18 +44,17 @@ export async function ListenSection({ albums }: { albums: Album[] }) {
             {t("youtube")}
           </h3>
           {youtubeSrc ? (
-            <div className="h-[352px] overflow-hidden bg-brand-ink">
-              <iframe
-                title={t("youtube")}
-                src={youtubeSrc}
-                className="size-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                loading="lazy"
-              />
-            </div>
+            <EmbedFacade
+              platform="youtube"
+              title={t("youtube")}
+              src={youtubeSrc}
+              posterSrc={posterSrc}
+              loadLabel={t("loadYoutube")}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
           ) : (
-            <div className="flex h-[352px] items-center justify-center bg-secondary px-6 text-center text-sm text-muted-foreground">
+            <div className="flex h-88 items-center justify-center bg-secondary px-6 text-center text-sm text-muted-foreground">
               {t("youtubePlaceholder")}
             </div>
           )}
@@ -63,17 +78,16 @@ export async function ListenSection({ albums }: { albums: Album[] }) {
             {t("spotify")}
           </h3>
           {hasSpotify ? (
-            <div className="h-[352px] overflow-hidden bg-brand-ink">
-              <iframe
-                title={t("spotify")}
-                src={`https://open.spotify.com/embed/${site.spotifyEmbedUri}?utm_source=generator&theme=0`}
-                className="size-full"
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"
-              />
-            </div>
+            <EmbedFacade
+              platform="spotify"
+              title={t("spotify")}
+              src={`https://open.spotify.com/embed/${site.spotifyEmbedUri}?utm_source=generator&theme=0`}
+              posterSrc={posterSrc}
+              loadLabel={t("loadSpotify")}
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            />
           ) : (
-            <div className="flex h-[352px] items-center justify-center bg-secondary px-6 text-center text-sm text-muted-foreground">
+            <div className="flex h-88 items-center justify-center bg-secondary px-6 text-center text-sm text-muted-foreground">
               {t("spotifyPlaceholder")}
             </div>
           )}

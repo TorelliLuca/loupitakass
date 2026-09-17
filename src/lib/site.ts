@@ -41,6 +41,11 @@ export const site = {
     hero: "/images/hero.jpg",
     /** Hero mobile / portrait (art-direction). */
     heroMobile: "/images/gallery/2025-verticale.jpg",
+    /**
+     * Share preview 1200×630 (Open Graph / Twitter).
+     * Finché manca l’asset dedicato, `seo.ts` usa la hero.
+     */
+    og: "/images/hero.jpg",
     /** Emblema con fondo rosso (badge). */
     logo: "/images/brand/logo.png",
     /** Emblema senza fondo — meglio su sfondi scuri. */
@@ -55,6 +60,13 @@ export const site = {
     occitanCross: "/images/brand/occitan-cross.svg",
     /** Solo stella a 7 punte. */
     occitanStar: "/images/brand/occitan-star.svg",
+    /** Bandiere lingue (switcher i18n). OC: croce gold su fondo rosso in UI. */
+    flags: {
+      it: "/images/flags/it.svg",
+      fr: "/images/flags/fr.svg",
+      en: "/images/flags/en.svg",
+      oc: "/images/flags/occitan-cross-gold.svg",
+    },
   },
 } as const;
 

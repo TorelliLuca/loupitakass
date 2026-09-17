@@ -1,4 +1,4 @@
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { HeroSection } from "@/components/sections/hero";
@@ -9,8 +9,10 @@ import { BioSection } from "@/components/sections/bio";
 import { MembersSection } from "@/components/sections/members";
 import { ContactFormSection } from "@/components/sections/contact-form";
 import { ContactsSection } from "@/components/sections/contacts";
+import { JsonLd } from "@/components/seo/json-ld";
 import { ScrollWoodpecker } from "@/components/ui/scroll-woodpecker";
 import { getPublicAlbums, getPublicEvents, getPublicMembers } from "@/lib/queries/public";
+import { musicGroupJsonLd } from "@/lib/seo";
 
 export default async function HomePage({
   params,
@@ -20,6 +22,7 @@ export default async function HomePage({
   const { locale } = await params;
   setRequestLocale(locale);
 
+  const tMeta = await getTranslations({ locale, namespace: "Meta" });
   const [events, members, albums] = await Promise.all([
     getPublicEvents(),
     getPublicMembers(),
@@ -28,6 +31,7 @@ export default async function HomePage({
 
   return (
     <>
+      <JsonLd data={musicGroupJsonLd(tMeta("description"))} />
       <SiteHeader />
       <main className="flex-1">
         <HeroSection />

@@ -30,6 +30,9 @@ export function OccitanCrossMark({
       src={src}
       alt=""
       aria-hidden
+      loading="lazy"
+      decoding="async"
+      fetchPriority="low"
       className={cn(
         "occitan-section-emblem pointer-events-none select-none",
         light && "occitan-section-emblem--light",

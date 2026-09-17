@@ -247,6 +247,9 @@ export function AlbumSleeve({
               alt=""
               className="album-sleeve__insert-mark"
               draggable={false}
+              loading="lazy"
+              decoding="async"
+              fetchPriority="low"
             />
             <div className="album-sleeve__insert-inner">
               <p className="album-sleeve__insert-kicker">
@@ -304,6 +307,9 @@ export function AlbumSleeve({
                   alt=""
                   className="album-sleeve__disc-img"
                   draggable={false}
+                  loading="lazy"
+                  decoding="async"
+                  fetchPriority="low"
                 />
               ) : null}
             </div>
@@ -311,14 +317,13 @@ export function AlbumSleeve({
         )}
         <div className="album-sleeve__flipper">
           <div className="album-sleeve__face album-sleeve__face--front">
-            <AlbumCoverMedia src={album.coverUrl} alt={title} priority />
+            <AlbumCoverMedia src={album.coverUrl} alt={title} />
           </div>
           {hasBack ? (
             <div className="album-sleeve__face album-sleeve__face--back">
               <AlbumCoverMedia
                 src={album.coverBackUrl}
                 alt={`${title} — ${labels.showBack}`}
-                priority
               />
             </div>
           ) : null}

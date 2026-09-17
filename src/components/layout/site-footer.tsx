@@ -38,9 +38,22 @@ export async function SiteFooter() {
             {t("privacy")}
           </Link>
         </nav>
-        <p className="text-sm text-white/55">
-          © {year} {site.name}. {t("rights")}
-        </p>
+        <div className="flex flex-col items-center gap-2">
+          <p className="text-sm text-white/55">
+            © {year} {site.name}. {t("rights")}
+          </p>
+          <p className="text-xs text-white/40">
+            {t("designedBy")}{" "}
+            <a
+              href="https://luca-torelli.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline-offset-2 transition-colors hover:text-white/70 hover:underline"
+            >
+              Luca Torelli
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );

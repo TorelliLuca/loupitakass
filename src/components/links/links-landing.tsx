@@ -202,7 +202,10 @@ export async function LinksLanding() {
 
       <div className="relative z-10 mx-auto flex w-full max-w-md flex-col px-4 py-8 sm:px-5 sm:py-10">
         <div className="mb-6 flex justify-end">
-          <LocaleSwitcher className="rounded-full border border-brand-mist/15 bg-brand-ink/40 px-2 py-1 backdrop-blur-sm [&_button]:text-brand-mist/70 [&_button:hover]:bg-brand-mist/10 [&_button:hover]:text-brand-mist [&_button[aria-current=true]]:bg-brand-brass [&_button[aria-current=true]]:text-brand-ink" />
+          <LocaleSwitcher
+            tone="onDark"
+            className="rounded-full border border-brand-mist/15 bg-brand-ink/40 backdrop-blur-sm"
+          />
         </div>
 
         <header className="mb-8 flex flex-col items-center text-center">

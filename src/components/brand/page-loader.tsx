@@ -79,7 +79,6 @@ export function PageLoader({ label = "Caricamento" }: { label?: string }) {
           <SiteLogo
             width={168}
             variant="transparent"
-            priority
             className="h-auto w-30 sm:w-36"
           />
         </div>

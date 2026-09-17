@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { LinksLanding } from "@/components/links/links-landing";
+import { buildSocialMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -9,15 +10,18 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Links" });
+  const title = t("metaTitle");
+  const description = t("metaDescription");
 
   return {
-    title: t("metaTitle"),
-    description: t("metaDescription"),
-    openGraph: {
-      title: t("metaTitle"),
-      description: t("metaDescription"),
-      url: "https://loupitakass.com/links",
-    },
+    title,
+    description,
+    ...buildSocialMetadata({
+      locale,
+      path: "/links",
+      title,
+      description,
+    }),
   };
 }
 

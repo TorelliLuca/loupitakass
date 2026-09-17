@@ -42,7 +42,9 @@ export async function StoryTimeline() {
               <div
                 className={cn(
                   "max-w-xl",
-                  imageLeft ? "lg:order-2" : "lg:order-1 lg:ml-auto lg:text-right",
+                  imageLeft
+                    ? "lg:order-2"
+                    : "lg:order-1 lg:ml-auto lg:text-right",
                 )}
               >
                 <p className="text-sm font-semibold tracking-[0.16em] text-brand-pine uppercase">

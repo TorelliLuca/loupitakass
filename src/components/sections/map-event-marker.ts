@@ -36,11 +36,11 @@ export function createEventMapMarker({
     button.dataset.animate = "true";
   }
 
-  // Pin + cerchio dello stesso colore; picchio a contrasto (rosso / giallo)
+  // Pin + cerchio dello stesso colore; dorso nero su entrambi, accenti a contrasto
   const fill = upcoming ? GOLD : RED;
   const stroke = upcoming ? GOLD_DEEP : RED_DEEP;
   const disc = upcoming ? GOLD : RED;
-  const bird = upcoming ? "rosso" : "giallo";
+  const bird = upcoming ? "rosso" : "nero";
 
   const badge =
     count > 1

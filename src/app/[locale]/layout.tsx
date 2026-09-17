@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Bodoni_Moda, Source_Sans_3 } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { hasLocale } from "next-intl";
@@ -8,19 +7,10 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Toaster } from "@/components/ui/sonner";
 import { routing } from "@/i18n/routing";
+import { displayFont, sourceSans } from "@/lib/fonts-public";
+import { buildSocialMetadata } from "@/lib/seo";
+import { site } from "@/lib/site";
 import "../globals.css";
-
-const sourceSans = Source_Sans_3({
-  variable: "--font-sans",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const bodoni = Bodoni_Moda({
-  variable: "--font-display",
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -32,12 +22,16 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+
   const messages = (await import(`../../messages/${locale}.json`)).default as {
     Meta: { siteName: string; description: string };
   };
 
   return {
-    metadataBase: new URL("https://loupitakass.com"),
+    metadataBase: new URL(site.domain),
     icons: {
       icon: [
         { url: "/favicon-16.png", sizes: "16x16", type: "image/png" },
@@ -54,14 +48,12 @@ export async function generateMetadata({
       template: `%s · ${messages.Meta.siteName}`,
     },
     description: messages.Meta.description,
-    openGraph: {
+    ...buildSocialMetadata({
+      locale,
+      path: "",
       title: messages.Meta.siteName,
       description: messages.Meta.description,
-      url: "https://loupitakass.com",
-      siteName: messages.Meta.siteName,
-      locale,
-      type: "website",
-    },
+    }),
   };
 }
 
@@ -84,7 +76,7 @@ export default async function LocaleLayout({
     <html
       lang={locale}
       data-scroll-behavior="smooth"
-      className={`${sourceSans.variable} ${bodoni.variable} h-full antialiased`}
+      className={`${sourceSans.variable} ${displayFont.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col font-sans">
         <NextIntlClientProvider messages={messages}>

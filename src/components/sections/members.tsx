@@ -9,7 +9,7 @@ import { FadeIn, FadeInItem, Stagger } from "@/components/motion/fade-in";
 import { Link } from "@/i18n/navigation";
 import { Section, SectionHeading } from "@/components/sections/section";
 import { MemberFlipCard } from "@/components/sections/member-flip-card";
-import { memberInstrument } from "@/components/sections/instrument-media";
+import { resolveMemberInstrument } from "@/components/sections/instrument-media";
 
 export async function MembersSection({ members }: { members: Member[] }) {
   const t = await getTranslations("Members");
@@ -23,7 +23,7 @@ export async function MembersSection({ members }: { members: Member[] }) {
         className="grid gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3"
         stagger={0.06}
       >
-        {members.map((member) => {
+        {members.map((member, index) => {
           const fullName = `${member.firstName} ${member.lastName}`;
           return (
             <FadeInItem
@@ -40,7 +40,8 @@ export async function MembersSection({ members }: { members: Member[] }) {
                 }
                 photoUrl={member.photoUrl}
                 photoAlt={t("photoAlt", { name: fullName })}
-                instrument={memberInstrument[member.id] ?? null}
+                instrument={resolveMemberInstrument(member)}
+                watermarkSide={index % 2 === 0 ? "right" : "left"}
               />
             </FadeInItem>
           );

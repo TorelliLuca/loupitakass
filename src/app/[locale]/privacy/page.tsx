@@ -1,15 +1,8 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { PrivacyContent } from "@/components/privacy/privacy-content";
-import { routing, type AppLocale } from "@/i18n/routing";
-import { site } from "@/lib/site";
-
-function privacyUrl(locale: string): string {
-  if (locale === routing.defaultLocale) {
-    return `${site.domain}/privacy`;
-  }
-  return `${site.domain}/${locale}/privacy`;
-}
+import { type AppLocale } from "@/i18n/routing";
+import { buildSocialMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -18,15 +11,18 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Privacy" });
+  const title = t("metaTitle");
+  const description = t("metaDescription");
 
   return {
-    title: t("metaTitle"),
-    description: t("metaDescription"),
-    openGraph: {
-      title: t("metaTitle"),
-      description: t("metaDescription"),
-      url: privacyUrl(locale),
-    },
+    title,
+    description,
+    ...buildSocialMetadata({
+      locale,
+      path: "/privacy",
+      title,
+      description,
+    }),
   };
 }
 

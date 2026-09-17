@@ -5,7 +5,7 @@
   },
   "Nav": {
     "home": "Acuèlh",
-    "dates": "Datas",
+    "dates": "Concèrts",
     "map": "Mapa",
     "listen": "Escotatz",
     "follow": "Seguissètz",
@@ -16,17 +16,17 @@
     "close": "Tampar"
   },
   "Hero": {
-    "ctaDates": "Prochainas datas",
+    "ctaDates": "Prochains concèrts",
     "ctaListen": "Escotatz-nos",
     "scroll": "Desplaçar"
   },
   "Dates": {
-    "title": "Datas",
-    "lead": "Concèrts a venir e memòria dels ja sonats.",
+    "title": "Concèrts",
+    "lead": "Los concèrts que nos espèran e los ja passats.",
     "upcoming": "A venir",
-    "past": "Passadas",
-    "emptyUpcoming": "Cap de data en programa per ara.",
-    "emptyPast": "Cap de data passada de mostrar.",
+    "past": "Passats",
+    "emptyUpcoming": "Cap de concèrt en programa per ara.",
+    "emptyPast": "Cap de concèrt passat de mostrar.",
     "tickets": "Bilhets",
     "flyer": "Aficha",
     "time": "a",
@@ -34,14 +34,14 @@
     "comeSee": "Venètz nos veire",
     "venue": "Luòc",
     "showAll": "Mostrar tot",
-    "pastAll": "Totas las datas passadas"
+    "pastAll": "Totes los concèrts passats"
   },
   "Map": {
     "title": "Mapa",
-    "lead": "Ont avèm sonat e ont anarem.",
-    "filterAll": "Totas",
-    "filterUpcoming": "Futuras",
-    "filterPast": "Passadas",
+    "lead": "Los luòcs de nòstra musica.",
+    "filterAll": "Totes",
+    "filterUpcoming": "Futurs",
+    "filterPast": "Passats",
     "empty": "Cap de punt de mostrar per aqueste filtre.",
     "clusterLabel": "{count} datas · {place}",
     "clusterCount": "{count} datas en aqueste luòc",
@@ -49,7 +49,7 @@
   },
   "Listen": {
     "title": "Escotatz-nos sus",
-    "lead": "Vidèo e escota en streaming.",
+    "lead": "Nòstra musica, en linha.",
     "discography": "Discografia",
     "discographyLead": "Albums e singles de la banda.",
     "comingSoon": "Lèu",
@@ -73,16 +73,22 @@
     "youtubePlaceholder": "La vidèo oficiala arribarà lèu.",
     "spotifyPlaceholder": "Lo ligam album Spotify arribarà lèu.",
     "openYoutube": "Dobrir sus YouTube",
-    "openSpotify": "Dobrir sus Spotify"
+    "openSpotify": "Dobrir sus Spotify",
+    "loadYoutube": "Cargar lo lector YouTube",
+    "loadSpotify": "Cargar lo lector Spotify"
   },
   "Follow": {
     "title": "Seguissètz-nos sus",
-    "lead": "Novèlas, ensags e datas sus los socials.",
+    "lead": "Per demorar informats sus novèlas e concèrts.",
     "facebook": "Facebook",
     "instagram": "Instagram",
     "openFacebook": "Anar a la pagina Facebook",
     "openInstagram": "Anar al perfil Instagram",
     "feedHint": "Darrièr post — clicatz per legir e dobrir sul social.",
+    "instagramFeedHint": "Darrièrs posts — fasètz defilar la galleria e clicatz per legir o dobrir sus Instagram.",
+    "instagramGallery": "Galleria Instagram",
+    "galleryPrev": "Post precedent",
+    "galleryNext": "Post seguent",
     "feedUnavailable": "Fil indisponible pel moment. Dobrissètz lo perfil amb lo ligam çai jos.",
     "openPost": "Dobrir lo post",
     "openOnFacebook": "Dobrir sus Facebook",
@@ -141,7 +147,7 @@
     "flipShow": "Mostrar instrument e bio de {name}",
     "flipBack": "Amagar detalh de {name}",
     "flipHint": "Tocatz una fòto per la virar.",
-    "bioFallback": "Bio a venir.",
+    "bioFallback": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae nisl at arcu tincidunt porttitor. Sed auctor, nisl nec fermentum feugiat, erat nisl tincidunt justo, vitae luctus magna lorem non nisl. Integer at libero non eros convallis tincidunt. Praesent vel nunc eget purus pretium egestas et eget elit.",
     "viewGallery": "Veire la galleria"
   },
   "ContactForm": {
@@ -193,7 +199,8 @@
     "rights": "Totes los dreches reservats.",
     "admin": "Espaci admin",
     "privacy": "Confidencialitat",
-    "story": "Nòstra istòria"
+    "story": "Nòstra istòria",
+    "designedBy": "Designed by"
   },
   "Links": {
     "metaTitle": "Ligams",

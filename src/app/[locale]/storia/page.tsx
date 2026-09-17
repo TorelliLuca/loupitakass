@@ -4,15 +4,9 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { StoryGallery } from "@/components/story/story-gallery";
 import { StoryHero } from "@/components/story/story-hero";
 import { StoryTimeline } from "@/components/story/story-timeline";
-import { routing, type AppLocale } from "@/i18n/routing";
-import { site } from "@/lib/site";
-
-function storyUrl(locale: string): string {
-  if (locale === routing.defaultLocale) {
-    return `${site.domain}/storia`;
-  }
-  return `${site.domain}/${locale}/storia`;
-}
+import { ScrollWoodpecker } from "@/components/ui/scroll-woodpecker";
+import { type AppLocale } from "@/i18n/routing";
+import { buildSocialMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -21,15 +15,18 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Story" });
+  const title = t("metaTitle");
+  const description = t("metaDescription");
 
   return {
-    title: t("metaTitle"),
-    description: t("metaDescription"),
-    openGraph: {
-      title: t("metaTitle"),
-      description: t("metaDescription"),
-      url: storyUrl(locale),
-    },
+    title,
+    description,
+    ...buildSocialMetadata({
+      locale,
+      path: "/storia",
+      title,
+      description,
+    }),
   };
 }
 
@@ -49,6 +46,7 @@ export default async function StoryPage({
         <StoryGallery />
       </main>
       <SiteFooter />
+      <ScrollWoodpecker />
     </>
   );
 }

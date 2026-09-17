@@ -5,7 +5,7 @@
   },
   "Nav": {
     "home": "Accueil",
-    "dates": "Dates",
+    "dates": "Concerts",
     "map": "Carte",
     "listen": "Écoutez",
     "follow": "Suivez-nous",
@@ -16,17 +16,17 @@
     "close": "Fermer"
   },
   "Hero": {
-    "ctaDates": "Prochaines dates",
+    "ctaDates": "Prochains concerts",
     "ctaListen": "Écoutez-nous",
     "scroll": "Défiler"
   },
   "Dates": {
-    "title": "Dates",
-    "lead": "Concerts à venir et mémoire de ceux déjà joués.",
+    "title": "Concerts",
+    "lead": "Les concerts qui nous attendent et ceux déjà passés.",
     "upcoming": "À venir",
-    "past": "Passées",
-    "emptyUpcoming": "Aucune date prévue pour le moment.",
-    "emptyPast": "Aucune date passée à afficher.",
+    "past": "Passés",
+    "emptyUpcoming": "Aucun concert prévu pour le moment.",
+    "emptyPast": "Aucun concert passé à afficher.",
     "tickets": "Billets",
     "flyer": "Affiche",
     "time": "à",
@@ -34,14 +34,14 @@
     "comeSee": "Venez nous voir",
     "venue": "Lieu",
     "showAll": "Tout afficher",
-    "pastAll": "Toutes les dates passées"
+    "pastAll": "Tous les concerts passés"
   },
   "Map": {
     "title": "Carte",
-    "lead": "Où nous avons joué et où nous irons.",
-    "filterAll": "Toutes",
-    "filterUpcoming": "Futures",
-    "filterPast": "Passées",
+    "lead": "Les lieux de notre musique.",
+    "filterAll": "Tous",
+    "filterUpcoming": "Futurs",
+    "filterPast": "Passés",
     "empty": "Aucun point à afficher pour ce filtre.",
     "clusterLabel": "{count} dates · {place}",
     "clusterCount": "{count} dates à cet endroit",
@@ -49,7 +49,7 @@
   },
   "Listen": {
     "title": "Écoutez-nous sur",
-    "lead": "Vidéo et écoute en streaming.",
+    "lead": "Notre musique, en ligne.",
     "discography": "Discographie",
     "discographyLead": "Albums et singles du groupe.",
     "comingSoon": "Bientôt",
@@ -73,16 +73,22 @@
     "youtubePlaceholder": "La vidéo officielle arrivera bientôt.",
     "spotifyPlaceholder": "Le lien album Spotify arrivera bientôt.",
     "openYoutube": "Ouvrir sur YouTube",
-    "openSpotify": "Ouvrir sur Spotify"
+    "openSpotify": "Ouvrir sur Spotify",
+    "loadYoutube": "Charger le lecteur YouTube",
+    "loadSpotify": "Charger le lecteur Spotify"
   },
   "Follow": {
     "title": "Suivez-nous sur",
-    "lead": "Actus, répétitions et dates sur les réseaux.",
+    "lead": "Pour rester au courant des nouveautés et concerts.",
     "facebook": "Facebook",
     "instagram": "Instagram",
     "openFacebook": "Aller à la page Facebook",
     "openInstagram": "Aller au profil Instagram",
     "feedHint": "Dernier post — cliquez pour lire et ouvrir sur le réseau.",
+    "instagramFeedHint": "Derniers posts — faites défiler la galerie et cliquez pour lire ou ouvrir sur Instagram.",
+    "instagramGallery": "Galerie Instagram",
+    "galleryPrev": "Post précédent",
+    "galleryNext": "Post suivant",
     "feedUnavailable": "Fil indisponible pour le moment. Ouvrez le profil via le lien ci-dessous.",
     "openPost": "Ouvrir le post",
     "openOnFacebook": "Ouvrir sur Facebook",
@@ -141,7 +147,7 @@
     "flipShow": "Voir l’instrument et la bio de {name}",
     "flipBack": "Masquer le détail de {name}",
     "flipHint": "Touchez une photo pour la retourner.",
-    "bioFallback": "Bio à venir.",
+    "bioFallback": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae nisl at arcu tincidunt porttitor. Sed auctor, nisl nec fermentum feugiat, erat nisl tincidunt justo, vitae luctus magna lorem non nisl. Integer at libero non eros convallis tincidunt. Praesent vel nunc eget purus pretium egestas et eget elit.",
     "viewGallery": "Voir la galerie"
   },
   "ContactForm": {
@@ -193,7 +199,8 @@
     "rights": "Tous droits réservés.",
     "admin": "Espace admin",
     "privacy": "Confidentialité",
-    "story": "Notre histoire"
+    "story": "Notre histoire",
+    "designedBy": "Designed by"
   },
   "Links": {
     "metaTitle": "Liens",

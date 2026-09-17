@@ -20,12 +20,12 @@ export async function PrivacyContent() {
 
   return (
     <>
-      <header className="border-b border-brand-ink/10 px-6 py-5">
+      <header className="sticky top-0 z-50 border-b border-brand-ink/10 bg-white/95 px-6 py-5 backdrop-blur-md">
         <div className="mx-auto flex w-full max-w-3xl items-center justify-between gap-4">
           <Link href="/" aria-label={site.name}>
             <SiteLogo width={180} className="w-36 sm:w-44" />
           </Link>
-          <LocaleSwitcher />
+          <LocaleSwitcher tone="ink" />
         </div>
       </header>
 

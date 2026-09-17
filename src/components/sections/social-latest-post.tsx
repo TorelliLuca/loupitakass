@@ -64,13 +64,13 @@ export function SocialLatestPost({
     <Dialog>
       <DialogTrigger
         className={cn(
-          "group relative flex w-full cursor-pointer flex-col overflow-hidden bg-black/35 text-left outline-none",
+          "group relative flex w-full min-w-0 max-w-full cursor-pointer flex-col overflow-hidden bg-black/35 text-left outline-none",
           "min-h-72 sm:min-h-80",
           "transition-transform duration-300 hover:scale-[1.01] focus-visible:ring-2 focus-visible:ring-brand-brass",
         )}
         aria-label={openPostLabel}
       >
-        <div className="relative flex min-h-56 flex-1 items-center justify-center p-3 sm:min-h-64 sm:p-4">
+        <div className="relative flex min-h-56 min-w-0 flex-1 items-center justify-center overflow-hidden p-3 sm:min-h-64 sm:p-4">
           {post.imageUrl ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img
@@ -79,7 +79,7 @@ export function SocialLatestPost({
               loading="lazy"
               decoding="async"
               referrerPolicy="no-referrer"
-              className="max-h-64 w-full object-contain transition duration-500 group-hover:scale-[1.02] sm:max-h-80"
+              className="max-h-64 max-w-full object-contain transition duration-500 group-hover:scale-[1.02] sm:max-h-80"
             />
           ) : (
             <p className="line-clamp-6 px-2 text-center text-sm leading-relaxed text-white/90 sm:text-base">
@@ -113,16 +113,9 @@ export function SocialLatestPost({
         </span>
       </DialogTrigger>
 
-      <DialogContent
-        className={cn(
-          "flex w-full flex-col gap-0 overflow-hidden rounded-none border-0 bg-white p-0 text-brand-ink shadow-2xl ring-0",
-          "max-h-[min(96dvh,52rem)] max-w-[min(calc(100vw-1.5rem),56rem)]",
-          "sm:max-w-[min(calc(100vw-2rem),56rem)]",
-        )}
-        aria-describedby={undefined}
-      >
-        <DialogHeader className="shrink-0 border-b border-brand-ink/10 px-4 py-3.5 pr-12 sm:px-7 sm:py-5">
-          <DialogTitle className="font-display text-2xl font-normal tracking-tight text-brand-ink sm:text-4xl">
+      <DialogContent layout="viewport" aria-describedby={undefined}>
+        <DialogHeader className="shrink-0 border-b border-brand-ink/10 px-4 py-3 pr-12 sm:px-7 sm:py-5">
+          <DialogTitle className="font-display text-xl font-normal tracking-tight text-brand-ink sm:text-4xl">
             {handle}
           </DialogTitle>
           {dateLabel ? (
@@ -132,18 +125,18 @@ export function SocialLatestPost({
           ) : null}
         </DialogHeader>
 
-        <div className="grid min-h-0 flex-1 grid-rows-[auto_1fr] overflow-y-auto md:grid-cols-2 md:grid-rows-1 md:overflow-hidden">
-          <div className="relative flex items-center justify-center bg-brand-ink/4 px-3 py-3 sm:px-4 sm:py-4 md:min-h-88 md:overflow-hidden">
+        <div className="flex min-h-0 flex-1 flex-col overflow-hidden md:grid md:grid-cols-2 md:grid-rows-1">
+          <div className="relative flex min-h-0 flex-[1.35] items-center justify-center overflow-hidden bg-brand-ink/4 px-2 py-2 sm:flex-1 sm:px-4 sm:py-4">
             {post.imageUrl ? (
               // eslint-disable-next-line @next/next/no-img-element
               <img
                 src={post.imageUrl}
                 alt=""
                 referrerPolicy="no-referrer"
-                className="max-h-[min(38dvh,18rem)] w-full object-contain md:max-h-[min(70dvh,36rem)] md:h-full"
+                className="max-h-full max-w-full object-contain"
               />
             ) : (
-              <div className="flex min-h-32 items-center justify-center px-4 text-sm text-brand-ink/45">
+              <div className="flex min-h-24 items-center justify-center px-4 text-sm text-brand-ink/45">
                 {handle}
               </div>
             )}
@@ -157,8 +150,8 @@ export function SocialLatestPost({
             ) : null}
           </div>
 
-          <div className="flex flex-col gap-4 px-4 py-4 sm:gap-6 sm:px-7 sm:py-7 md:overflow-y-auto">
-            <p className="min-h-0 flex-1 whitespace-pre-wrap font-sans text-[0.95rem] leading-relaxed text-brand-ink/90 sm:text-base sm:leading-7">
+          <div className="flex min-h-0 max-h-[40%] flex-col gap-3 overflow-hidden border-t border-brand-ink/10 px-4 py-3 sm:max-h-none sm:flex-1 sm:gap-6 sm:overflow-y-auto sm:px-7 sm:py-7 md:border-t-0">
+            <p className="min-h-0 flex-1 overflow-y-auto whitespace-pre-wrap font-sans text-[0.95rem] leading-relaxed text-brand-ink/90 sm:text-base sm:leading-7">
               {caption || noCaptionLabel}
             </p>
 
@@ -166,7 +159,7 @@ export function SocialLatestPost({
               href={post.permalink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex w-full items-center justify-center gap-2 bg-brand-ink px-5 py-3 text-sm font-semibold tracking-wide text-white transition-opacity hover:opacity-90 sm:w-fit sm:py-2.5"
+              className="inline-flex w-full shrink-0 items-center justify-center gap-2 bg-brand-ink px-5 py-3 text-sm font-semibold tracking-wide text-white transition-opacity hover:opacity-90 sm:w-fit sm:py-2.5"
             >
               {openOnPlatformLabel}
               <ExternalLink className="size-3.5" aria-hidden />

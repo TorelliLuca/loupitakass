@@ -5,7 +5,7 @@
   },
   "Nav": {
     "home": "Home",
-    "dates": "Dates",
+    "dates": "Shows",
     "map": "Map",
     "listen": "Listen",
     "follow": "Follow",
@@ -16,17 +16,17 @@
     "close": "Close"
   },
   "Hero": {
-    "ctaDates": "Upcoming dates",
+    "ctaDates": "Upcoming shows",
     "ctaListen": "Listen",
     "scroll": "Scroll"
   },
   "Dates": {
-    "title": "Dates",
-    "lead": "Shows ahead and a record of past gigs.",
+    "title": "Shows",
+    "lead": "The shows ahead and those already played.",
     "upcoming": "Upcoming",
     "past": "Past",
-    "emptyUpcoming": "No upcoming dates right now.",
-    "emptyPast": "No past dates to show.",
+    "emptyUpcoming": "No upcoming shows right now.",
+    "emptyPast": "No past shows to show.",
     "tickets": "Tickets",
     "flyer": "Flyer",
     "time": "at",
@@ -34,11 +34,11 @@
     "comeSee": "Come see us",
     "venue": "Venue",
     "showAll": "Show all",
-    "pastAll": "All past dates"
+    "pastAll": "All past shows"
   },
   "Map": {
     "title": "Map",
-    "lead": "Where we’ve played and where we’re headed.",
+    "lead": "The places of our music.",
     "filterAll": "All",
     "filterUpcoming": "Upcoming",
     "filterPast": "Past",
@@ -49,7 +49,7 @@
   },
   "Listen": {
     "title": "Listen on",
-    "lead": "Video and streaming.",
+    "lead": "Our music, online.",
     "discography": "Discography",
     "discographyLead": "Albums and singles from the band.",
     "comingSoon": "Coming soon",
@@ -73,16 +73,22 @@
     "youtubePlaceholder": "The official video is coming soon.",
     "spotifyPlaceholder": "The Spotify album link is coming soon.",
     "openYoutube": "Open on YouTube",
-    "openSpotify": "Open on Spotify"
+    "openSpotify": "Open on Spotify",
+    "loadYoutube": "Load YouTube player",
+    "loadSpotify": "Load Spotify player"
   },
   "Follow": {
     "title": "Follow us on",
-    "lead": "News, rehearsals and dates on socials.",
+    "lead": "Stay updated on news and shows.",
     "facebook": "Facebook",
     "instagram": "Instagram",
     "openFacebook": "Go to Facebook page",
     "openInstagram": "Go to Instagram profile",
     "feedHint": "Latest post — click to read and open on the social.",
+    "instagramFeedHint": "Latest posts — swipe the gallery and click to read or open on Instagram.",
+    "instagramGallery": "Instagram gallery",
+    "galleryPrev": "Previous post",
+    "galleryNext": "Next post",
     "feedUnavailable": "Feed unavailable right now. Open the profile from the link below.",
     "openPost": "Open post",
     "openOnFacebook": "Open on Facebook",
@@ -141,7 +147,7 @@
     "flipShow": "Show instrument and bio for {name}",
     "flipBack": "Hide details for {name}",
     "flipHint": "Tap a photo to flip it.",
-    "bioFallback": "Bio coming soon.",
+    "bioFallback": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae nisl at arcu tincidunt porttitor. Sed auctor, nisl nec fermentum feugiat, erat nisl tincidunt justo, vitae luctus magna lorem non nisl. Integer at libero non eros convallis tincidunt. Praesent vel nunc eget purus pretium egestas et eget elit.",
     "viewGallery": "View the gallery"
   },
   "ContactForm": {
@@ -193,7 +199,8 @@
     "rights": "All rights reserved.",
     "admin": "Admin area",
     "privacy": "Privacy",
-    "story": "Our story"
+    "story": "Our story",
+    "designedBy": "Designed by"
   },
   "Links": {
     "metaTitle": "Links",

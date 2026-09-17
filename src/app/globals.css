@@ -1047,6 +1047,15 @@
     pointer-events: none;
   }
 
+  /* Ascoltaci — watermark dietro, sulla fascia tra album e embed */
+  .occitan-section-emblem--listen-mid {
+    width: min(90vmin, 40rem);
+    height: min(90vmin, 40rem);
+    max-width: min(90vmin, 40rem);
+    max-height: min(90vmin, 40rem);
+    opacity: 0.24;
+  }
+
   .occitan-section-emblem--light.occitan-section-emblem--below,
   .occitan-section-emblem--light.occitan-section-emblem--form-back {
     opacity: 0.16;
@@ -1074,6 +1083,14 @@
       opacity: 0.2;
     }
 
+    .occitan-section-emblem--listen-mid {
+      width: min(80vmin, 48rem);
+      height: min(80vmin, 48rem);
+      max-width: min(80vmin, 48rem);
+      max-height: min(80vmin, 48rem);
+      opacity: 0.22;
+    }
+
     .occitan-section-emblem--light.occitan-section-emblem--backdrop {
       opacity: 0.18;
     }
@@ -1089,3 +1106,36 @@
   }
 }
 
+
+/* Social post viewer: fit exact viewport (no top-1/2/translate overflow) */
+.social-post-viewer[data-layout="viewport"] {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  max-width: none;
+  height: auto;
+  max-height: none;
+  margin: 0;
+  transform: none;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .social-post-viewer[data-layout="viewport"] {
+    top: 50%;
+    right: auto;
+    bottom: auto;
+    left: 50%;
+    width: min(calc(100vw - 2rem), 56rem);
+    max-width: min(calc(100vw - 2rem), 56rem);
+    height: auto;
+    max-height: min(92dvh, 52rem);
+    transform: translate(-50%, -50%);
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
